@@ -56,3 +56,40 @@ nav>* {
 .title-container .title:hover {
     color: #D14D72;
 }
+/* home card */
+.home-card{
+    color:#F9F9F9 ;
+    
+}
+.home-card .span1{
+    text-align: center;
+    font-size:50px;
+    font-style: italic;
+    color:#D14D72 ;
+
+}
+.home-card .search-field{
+    text-align: center;
+    font-size:40px;   
+    border-radius: 20px;
+    border: #D14D72;
+    margin-top: 8%;
+    font-style: italic;
+}
+.home-card .btn-clr{
+    text-align: center;
+    font-size:40px;
+   background-color:#D14D72 ;
+    margin-left: 40%;
+    margin-top: 2%;
+    color:#F9F9F9  ;
+    font-style: italic;
+
+}
+.home-card .btn-clr:hover{
+    color: #000;
+    background-color: #F9F9F9;
+}
+
+
+
