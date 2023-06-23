@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { Navbar } from "../compnents/Navbar"
 
 export const Home = () => {
@@ -11,7 +12,7 @@ export const Home = () => {
                 
                 <input className="search-field" type="text" placeholder="search here"/>
                 <hr/>
-                <button className="btn-clr">Explore Qoutes</button>
+                <button className="btn-clr"><Link to={'/qoutes'}> Explore Qoutes</Link></button>
                 
             </div>
 
