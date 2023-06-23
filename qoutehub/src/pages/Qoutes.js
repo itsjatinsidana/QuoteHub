@@ -16,7 +16,7 @@ export const Qoutes = () => {
                 'X-RapidAPI-Host': 'quotel-quotes.p.rapidapi.com'
             },
             data: {
-                pageSize: 50,
+                pageSize: 150,
                 page: 0
             }
         };

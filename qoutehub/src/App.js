@@ -3,6 +3,7 @@ import { Home } from './pages/Home';
 import { Navbar } from './compnents/Navbar';
 import { Collections } from './pages/Collections';
 import { Qoutes } from './pages/Qoutes';
+import { Search } from "./pages/Search";
 
 function App() {
   return (
@@ -12,6 +13,8 @@ function App() {
                     <Route path='/' element={<Home/>}/>
                     <Route path='/qoutes' element={<Qoutes/>}/>
                     <Route path='/collections' element={<Collections/>}/>
+                    <Route path='/search' element={<Search/>}/>
+                    
                     
                 </Routes>
             </BrowserRouter>

@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Navbar } from "../compnents/Navbar"
 
+
+
 export const Home = () => {
+   const nav = useNavigate();  //to navigate from 1 page to another
     return (
         <>
             <div className="navbar-container">
@@ -10,7 +13,7 @@ export const Home = () => {
             <div class="home-card">
                 <span className="span1">Unlock the power of words at QuoteHub </span>
                 
-                <input className="search-field" type="text" placeholder="search here"/>
+                <input className="search-field" type="text" placeholder="search here.." onFocus={()=>{nav("/search")}}/>{/*use here in onfocus with router link */}
                 <hr/>
                 <button className="btn-clr"><Link to={'/qoutes'}> Explore Qoutes</Link></button>
                 
