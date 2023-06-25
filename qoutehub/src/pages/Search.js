@@ -21,7 +21,7 @@ export const Search = () => {
             data: {
                 pageSize: 25,
                 page: 0,
-                searchString:  {term}
+                searchString:  term
             }
         };
 

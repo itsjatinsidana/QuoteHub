@@ -1,8 +1,12 @@
 import axios from "axios";
 import { Navbar } from "../compnents/Navbar";
 import { useState,useEffect } from "react";
+import Loader from "../compnents/Loader";
 export const Friendship =() =>{
     const [friend, setFriend] = useState([]);
+   
+    const [page, setPage] = useState(1);
+    const [loding, setLoading] = useState(true);
     async function getFriend() {
         const options = {
             method: 'POST',
@@ -13,22 +17,35 @@ export const Friendship =() =>{
                 'X-RapidAPI-Host': 'quotel-quotes.p.rapidapi.com'
             },
             data: {
-                pageSize: 2,
-                page: 10,
+                pageSize: 6,
+                page: page,
                 topic: 'friendship'
             }
         };
         try {
             const response = await axios.request(options);
             console.log(response.data);
-            setFriend(response.data)
+          
+            setFriend(prev => [...prev, ...response.data])
+            setLoading(false)
         } catch (error) {
             console.error(error);
         }
     }
     useEffect(() => {
         getFriend();
-    }, [])
+    }, [page])
+    function handleScroll() {
+
+        if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight) {
+            setLoading(true);
+            setPage(prev => prev + 1)
+        }
+    }
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return(
         <>
          <div className="collection-nav" >
@@ -53,6 +70,7 @@ export const Friendship =() =>{
                 }
 
             </div>
+            <Loader/>
         
         </>
     )

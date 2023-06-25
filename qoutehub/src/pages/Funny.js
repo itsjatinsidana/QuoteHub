@@ -1,8 +1,11 @@
 import { Navbar } from "../compnents/Navbar";
 import { useEffect,useState } from "react";
 import axios from "axios";
+import Loader from "../compnents/Loader";
 export const Funny =() =>{
     const [funny, setFunny] = useState([]);
+    const [page, setPage] = useState(1);
+    const [loding, setLoading] = useState(true);
     async function getFunny() {
         const options = {
             method: 'POST',
@@ -13,22 +16,35 @@ export const Funny =() =>{
                 'X-RapidAPI-Host': 'quotel-quotes.p.rapidapi.com'
             },
             data: {
-                pageSize: 2,
-                page: 10,
+                pageSize: 6,
+                page: page,
                 topic: 'funny'
             }
         };
         try {
             const response = await axios.request(options);
             console.log(response.data);
-            setFunny(response.data)
+            
+            setFunny(prev => [...prev, ...response.data])
+            setLoading(false)
         } catch (error) {
             console.error(error);
         }
     }
     useEffect(() => {
         getFunny();
-    }, [])
+    }, [page])
+    function handleScroll() {
+
+        if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.documentElement.scrollHeight) {
+            setLoading(true);
+            setPage(prev => prev + 1)
+        }
+    }
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
     return(
         <>
          <div className="collection-nav" >
@@ -53,6 +69,7 @@ export const Funny =() =>{
                 }
 
             </div>
+            <Loader/>
         
         </>
     )
