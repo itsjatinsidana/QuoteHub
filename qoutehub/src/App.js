@@ -10,6 +10,7 @@ import { Love } from './pages/Love';
 import { Funny } from './pages/Funny';
 import { Success } from './pages/Success';
 import { Friendship } from './pages/Friendship';
+import { Footer } from './compnents/Footer';
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
                     <Route path='/funny' element={<Funny/>}/>
                     <Route path='/success' element={<Success/>}/>
                     <Route path='/friendship' element={<Friendship/>}/>
+                    <Route path='/footer' element={<Footer/>}/>
                     
                     
                 </Routes>

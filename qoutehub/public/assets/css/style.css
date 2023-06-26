@@ -1,4 +1,28 @@
-   body {
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+  
+  /*Scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:#D14D72;
+    border-radius: 20px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  /*Scrollbar End*/
+  body {
        background-image: url('../images/main.jpg.jpg');
        background-repeat: no-repeat;
        background-size: cover;
@@ -390,7 +414,7 @@
         width: 7px;
         height: 7px;
         border-radius: 50%;
-        background: #ffe400;
+        background: #D14D72;
         margin: -4px 0 0 -4px;
     }
     .lds-roller div:nth-child(1) {
@@ -457,3 +481,45 @@
             transform: rotate(360deg);
         }
     }
+      /* footer*/
+      footer {
+        background-color:transparent;
+        color: #fff;
+        padding: 20px;
+      }
+      
+      .container {
+        
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .container a{
+        text-decoration: none;
+        color: #D14D72;
+      }
+      
+      .social-media-links {
+        display: flex;
+        justify-content: flex-end;
+        
+        
+       
+    
+      }
+      
+      .social-media-links a {
+        color: #fff;
+        margin-right: 10px;
+        display: flex;
+        
+       
+    
+        
+      }
+    
+
+      .home-footer{
+        margin-top: 60px;
+      }
+      
