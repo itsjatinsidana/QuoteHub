@@ -27,9 +27,21 @@
        background-repeat: no-repeat;
        background-size: cover;
        backdrop-filter: blur(5px);
-
+       background-position: center;
+       background-attachment: fixed ;
+       overflow-x: hidden;
+       padding: 0;
+       margin: 0;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
    }
-
+     
+@media screen and (max-width: 400px) {
+    .title-container a{
+      font-size: 32px;
+    }
+  }
+  
+  
    nav {
        display: flex;
        justify-content: space-around;
@@ -37,6 +49,7 @@
        padding: 1rem;
        font-size: xx-large;
    }
+  
 
    .list-items ul {
        display: flex;
@@ -53,6 +66,60 @@
        flex: 1;
 
    }
+   @media screen and (max-width: 800px) {
+    .ham-icon{
+      display: block;
+    }
+ .list-items .list-item{
+        display: none;
+      }
+    }  
+    aside{
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 110;
+        padding: 1rem 2rem;
+        background-color: #212121;
+        transition: all 0.2s ease;
+        transform: translateX(100%);
+      }
+      
+      aside.active{
+        transform: translateX(0%);
+      }
+      
+      aside .menu__close{
+        position: absolute;
+        right: 5px;
+        top: 10px;
+        background-color: transparent;
+        color: white;
+        border: none;
+        outline: none;
+      }
+      
+      aside .sidebar .sidebar__menu .menu__list{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        list-style-type: none;
+      }
+      
+      aside .sidebar .sidebar__menu .menu__list .menu-items a{
+        text-decoration: none;
+        color: #939393;
+        font-weight: bold;
+        font-size: 22px;
+        text-transform: uppercase;
+        transition: all 0.2s ease;
+      }
+      
+      aside .sidebar .sidebar__menu .menu__list .menu-items a:hover{
+        color: white;
+      }
+      
 
    .list-items ul li a {
        text-decoration: none;
@@ -114,13 +181,18 @@
        justify-content: center;
        margin-left: 30%;
        margin-top: 5%;
-      
        
-       
-       
-
-   }
-
+      }
+      @media screen and (max-width :400){
+        .home-card .search-field{
+            display:flex ;
+            justify-content: flex-start;
+        }
+        .home-card .btn-clr{
+            display:flex ;
+            justify-content: flex-start;
+        }
+      }
    .home-card .btn-clr {
        display: flex;
        justify-content: flex-start;
@@ -192,7 +264,7 @@
 
    /* search container*/
    .search-container {
-       display: flex;
+       
        justify-content: center;
        align-items: center;
 
@@ -220,7 +292,7 @@
        padding: 2rem 0;
        margin-top: 0%;
        gap: 1rem;
-       position: fixed;
+       
    }
 
    .search-container .search-form input {

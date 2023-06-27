@@ -12,7 +12,7 @@ export const Search = () => {
 
         const options = {
             method: 'POST',
-            url: `https://quotel-quotes.p.rapidapi.com/search/${term}`,
+            url: `https://quotel-quotes.p.rapidapi.com/search`,
             headers: {
                 'content-type': 'application/json',
                 'X-RapidAPI-Key': '904536df4emsh2aac700c28b8eedp1660adjsn45c008306c57',
@@ -21,7 +21,7 @@ export const Search = () => {
             data: {
                 pageSize: 25,
                 page: 0,
-                searchString:  {term}
+                searchString:  term
             }
         };
 
