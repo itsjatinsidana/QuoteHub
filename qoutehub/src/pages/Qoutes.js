@@ -69,11 +69,6 @@ export const Qoutes = () => {
                         )
                     }))
                 }
-
-
-
-               
-
             </div >
             <Loader />
         </>
