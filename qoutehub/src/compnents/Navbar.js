@@ -1,15 +1,17 @@
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
+
 export const Navbar = () => {
-    
-    function openMenu(){
+
+    function openMenu() {
         let sidebar = document.getElementById("sidebar");
         sidebar.classList.add("active");
     }
 
-    function closeMenu(){
+    function closeMenu() {
         let sidebar = document.getElementById("sidebar");
         sidebar.classList.remove("active");
     }
+
     return (
         <>
             <nav>
@@ -27,22 +29,19 @@ export const Navbar = () => {
                     </ul>
 
                 </div>
-                </nav>
-                <aside id="sidebar">
+            </nav>
+            <aside id="sidebar">
                 <button className="menu__close" onClick={closeMenu}><i className="fa-solid fa-xmark"></i></button>
                 <div className="sidebar__menu">
-                        <ul className="menu__list">
-                            <li className="menu-items"><Link to={'/'}>Home</Link></li>
-                            <li className="menu-items"><Link to={'qoutes'}> Qoutes</Link></li>
-                            
-                            <li className="menu-items"><Link to={'/collections'}>collections</Link></li>
-                            <li className="menu-item"><Link to={'/authors'}>Authors</Link></li>
-                        </ul>
-                    </div>
-                
+                    <ul className="menu__list">
+                        <li className="menu-items"><Link to={'/'}>Home</Link></li>
+                        <li className="menu-items"><Link to={'qoutes'}> Qoutes</Link></li>
 
-
-                </aside>
+                        <li className="menu-items"><Link to={'/collections'}>collections</Link></li>
+                        <li className="menu-item"><Link to={'/authors'}>Authors</Link></li>
+                    </ul>
+                </div>
+            </aside>
         </>
     )
 }
