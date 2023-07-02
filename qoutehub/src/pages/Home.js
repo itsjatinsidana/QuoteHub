@@ -10,7 +10,7 @@ export const Home = () => {
             <div className="navbar-container">
                 <Navbar/>
             </div>
-            <div class="home-card">
+            <div className="home-card">
                 <span className="span1">Unlock the power of words at QuoteHub </span>
                 <input className="search-field" type="text" placeholder="Search here.." onFocus={() => {
                     nav("/search")

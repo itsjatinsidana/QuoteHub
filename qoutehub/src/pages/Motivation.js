@@ -50,7 +50,9 @@ export const Motivation = () => {
             <div className="collection-nav" >
                 <Navbar />
             </div>
-            <span className="motivate-container"> motivational qoutes</span>
+            <div className="margin">
+            <span className="motivate-container1"> motivational qoutes</span>
+            </div>
             <div className="qoutes-card">
 
                 {
@@ -69,6 +71,7 @@ export const Motivation = () => {
                 }
 
             </div>
+            
             <Loader/>
 
         </>
