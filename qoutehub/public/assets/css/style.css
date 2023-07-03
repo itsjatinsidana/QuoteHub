@@ -40,11 +40,7 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-@media screen and (max-width: 400px) {
-    .title-container a {
-        font-size: 32px;
-    }
-}
+
 
 
 nav {
@@ -76,7 +72,30 @@ nav > * {
     flex: 1;
 
 }
-
+@media  (max-width: 768px ) {
+    nav {
+       
+      flex-direction: column;
+      align-items: start;
+    }
+  
+    .title-container {
+      margin-bottom: 10px;
+     
+      
+    }
+   
+    .list-items ul {
+        flex-direction: column;
+      }
+    
+      .list-item {
+        margin-right: 0;
+        margin-bottom: 2px;
+      }
+    
+     
+    }
 
 aside {
     position: absolute;
@@ -211,6 +230,20 @@ aside .sidebar .sidebar__menu .menu__list .menu-items a:hover {
 .home-card .btn-clr:hover {
     background-color: #D14D72;
 }
+@media  (max-width: 900px) {
+    .home-card .search-field{
+       display: flex;
+       justify-content: center;
+       font-size: 25px;
+       margin-top: 10%;
+    }
+    .home-card .btn-clr{
+        font-size: 15px;
+        width: 15dvh;
+
+
+    }
+}
 
 
 /* qoutes -card  */
@@ -272,6 +305,21 @@ aside .sidebar .sidebar__menu .menu__list .menu-items a:hover {
 
 
 }
+@media (max-width: 768px) {
+    .search-here {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .btn-clr {
+      width: 100%;
+    }
+  
+    .card-content {
+      width: 100%;
+    }
+  }
 
 /* search container*/
 

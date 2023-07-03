@@ -25,7 +25,7 @@ export const Navbar = () => {
                         <li className="list-item"><Link to={'/qoutes'}> Qoutes</Link></li>
                         <li className="list-item"><Link to={'/collections'}>Collection</Link></li>
                         <li className="list-item"><Link to={'/authors'}>Authors</Link></li>
-                     {/*   <li className="ham-icon" onClick={openMenu}><i className="fa-solid fa-bars"></i></li> */} 
+                      {/*  <li className="ham-icon" onClick={openMenu}><i className="fa-solid fa-bars"></i></li> */} 
                     </ul>
 
                 </div>

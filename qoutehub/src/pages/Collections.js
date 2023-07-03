@@ -10,7 +10,7 @@ export const Collections = () => {
     const nav4 = useNavigate();
     return (
         <>
-            <div classNameName="collection-nav" >
+            <div className="collection-nav" >
                 <Navbar />
             </div>
             {/*motivational */}
