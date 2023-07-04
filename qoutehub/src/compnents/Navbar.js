@@ -1,16 +1,14 @@
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export const Navbar = () => {
 
-    function openMenu() {
-        let sidebar = document.getElementById("sidebar");
-        sidebar.classList.add("active");
-    }
+   
+    const [isNavbarActive, setNavbarActive] = useState(false);
 
-    function closeMenu() {
-        let sidebar = document.getElementById("sidebar");
-        sidebar.classList.remove("active");
-    }
+    const toggleNavbar = () => {
+        setNavbarActive(!isNavbarActive);
+    };
 
     return (
         <>
@@ -20,13 +18,21 @@ export const Navbar = () => {
                         <span className="title">QouteHub</span>
                     </Link>
                 </div>
-                <div className="list-items">
+                <a href="#" className="toggle-button" onClick={toggleNavbar}>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                </a>
+
+                <div className={`list-items ${isNavbarActive ? "active" : ""}`}>
                     <ul>
-                        <li className="list-item"><Link to={'/qoutes'}> Qoutes</Link></li>
+                        <li className="list-item"><Link to={"/qoutes"}> Qoutes</Link></li>
                         <li className="list-item"><Link to={'/collections'}>Collection</Link></li>
                         <li className="list-item"><Link to={'/authors'}>Authors</Link></li>
-                      {/*  <li className="ham-icon" onClick={openMenu}><i className="fa-solid fa-bars"></i></li> */} 
+                        {/*  <li className="ham-icon" onClick={openMenu}><i className="fa-solid fa-bars"></i></li> 
+                        */}
                     </ul>
+
 
                 </div>
             </nav>

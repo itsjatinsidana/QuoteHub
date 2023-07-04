@@ -24,7 +24,7 @@ export const Motivation = () => {
         try {
             const response = await axios.request(options);
             console.log(response.data);
-            
+
             setmotivate(prev => [...prev, ...response.data])
             setLoading(false)
         } catch (error) {
@@ -47,11 +47,11 @@ export const Motivation = () => {
     }, []);
     return (
         <>
-            <div className="collection-nav" >
+            <div >
                 <Navbar />
             </div>
-            <div className="margin">
-            <span className="motivate-container1"> motivational qoutes</span>
+            <div >
+                <span className="motivate-container"> motivational qoutes</span>
             </div>
             <div className="qoutes-card">
 
@@ -71,8 +71,8 @@ export const Motivation = () => {
                 }
 
             </div>
-            
-            <Loader/>
+
+            <Loader />
 
         </>
     )
